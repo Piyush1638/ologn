@@ -14,6 +14,7 @@ const SearchForm = () => {
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const [showSuggestions, setShowSuggestions] = useState<boolean>(false);
   const [placeholder, setPlaceholder] = useState<string>("Search for a location");
+  
 
   const filterSuggestions = (input: string) => {
     if (input.length > 0) {
@@ -64,7 +65,7 @@ const SearchForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="relative md:w-2/5 w-full">
+    <form onSubmit={handleSubmit} className="relative md:w-3/5 lg:w-2/5  w-full">
       <div className="w-full pl-2 pr-4 py-1 bg-white border border-gray-500 rounded-full flex items-center gap-2">
         <CiSearch className="inline-block text-3xl" />
         <input
@@ -103,6 +104,10 @@ const SearchForm = () => {
     </form>
   );
 };
+
+
+
+
 
 // Custom type definitions for SpeechRecognition and related events
 interface SpeechRecognitionResult {

@@ -1,11 +1,10 @@
+import { AutocompleteProps } from "@/lib/interfaces/interface";
 import React from "react";
 
-interface AutocompleteProps {
-  suggestions: string[];
-  onSelect: (suggestion: string) => void;
-}
-
-const Autocomplete: React.FC<AutocompleteProps> = ({ suggestions, onSelect }) => {
+const Autocomplete: React.FC<AutocompleteProps> = ({
+  suggestions,
+  onSelect,
+}) => {
   return (
     <div className="absolute z-20 mt-1 w-full max-h-80 h-fit overflow-y-scroll border border-gray-300 bg-white rounded-lg shadow-lg">
       {suggestions.map((suggestion, index) => (

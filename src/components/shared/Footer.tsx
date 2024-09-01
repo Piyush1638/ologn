@@ -1,3 +1,5 @@
+"use client"
+import { usePathname } from 'next/navigation';
 import React from 'react';
 
 // Reusable Link component
@@ -8,8 +10,11 @@ const FooterLink = ({ href, children }:{href:string; children:string;}) => (
 );
 
 const Footer = () => {
+
+  const pathName = usePathname();
+  const isHome = pathName === '/';
   return (
-    <footer className="bg-gray-100 border-t border-gray-200 py-4  w-full">
+    <footer className={`bg-gray-100 border-t border-gray-200 py-4 ${isHome && "fixed bottom-0"} w-full`}>
       <div className="text-sm text-gray-600 mb-2 md:mb-0 border-b border-gray-300 py-2 px-8">
         India
       </div>
